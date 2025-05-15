@@ -79,7 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         socket.on('code_result', (data) => {
-            appendToOutput(data.result);
+            // Clear the "Running code..." message
+            outputElement.innerHTML = '';
+            
+            // Format and display the result
+            const formattedOutput = document.createElement('pre');
+            formattedOutput.textContent = data.result;
+            outputElement.appendChild(formattedOutput);
+            outputElement.scrollTop = outputElement.scrollHeight;
         });
 
         // Handle editor changes
@@ -143,6 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run code
     runCodeBtn.addEventListener('click', () => {
         if (currentRoom && isConnected) {
+            // Show loading indicator
+            appendToOutput('Running code...');
+            
             socket.emit('run_code', {
                 room: currentRoom,
                 code: editor.getValue()

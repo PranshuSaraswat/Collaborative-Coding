@@ -7,6 +7,7 @@ A real-time collaborative code editor for Python that allows multiple users to c
 - Real-time code synchronization between users
 - Split-screen interface with code editor and output panel
 - Python syntax highlighting
+- Actual Python code execution with output display
 - Room-based collaboration
 - Simple and intuitive UI
 
@@ -70,7 +71,7 @@ A real-time collaborative code editor for Python that allows multiple users to c
 
 4. **Write Code**: Start writing Python code in the editor. All changes will be synchronized in real-time with other users in the same room.
 
-5. **Run Code**: Click the "Run Code" button to execute the code (Note: Code execution is simulated in this demo version).
+5. **Run Code**: Click the "Run Code" button to execute the Python code.
 
 6. **View Output**: The results of code execution will appear in the output panel.
 
@@ -85,14 +86,15 @@ A real-time collaborative code editor for Python that allows multiple users to c
 
 This is a demonstration project with some limitations:
 
-- Code execution is simulated and not actually performed for security reasons
+- Code execution has restricted access to Python built-ins for security
 - No persistent storage of code between sessions
 - Limited error handling
 - No user authentication
+- Execution timeout of 5 seconds for long-running code
 
 ## Future Improvements
 
-- Implement secure code execution in a sandbox environment
+- Add support for more Python libraries with proper sandboxing 
 - Add user authentication and permissions
 - Implement persistent storage for code
 - Add more features like file management, version history, etc.
