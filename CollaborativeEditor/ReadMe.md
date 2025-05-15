@@ -97,4 +97,4 @@ This is a demonstration project with some limitations:
 - Add support for more Python libraries with proper sandboxing 
 - Add user authentication and permissions
 - Implement persistent storage for code
-- Add more features like file management, version history, Etc.
+- Add more features like file management, version history, etc.
