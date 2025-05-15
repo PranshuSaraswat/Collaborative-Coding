@@ -22,7 +22,7 @@ A real-time collaborative code editor for Python that allows multiple users to c
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/collaborative-python-editor.git
+   git clone https://github.com/PranshuSaraswat/collaborative-python-editor.git
    cd collaborative-python-editor
    ```
 
