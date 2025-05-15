@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Python Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Collaborative Python Editor</h1>
+            <div class="room-info">
+                <span id="room-id">Room: {{ room_id if room_id else 'Create a room' }}</span>
+                <span id="user-count">Users: 1</span>
+            </div>
+            <div class="controls">
+                <button id="create-room">Create Room</button>
+                <input type="text" id="room-input" placeholder="Enter room ID">
+                <button id="join-room">Join Room</button>
+                <button id="run-code">Run Code</button>
+            </div>
+        </div>
+        
+        <div class="splitscreen">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <h3>Python Editor</h3>
+                </div>
+                <textarea id="code-editor" placeholder="# Write your Python code here"></textarea>
+            </div>
+            
+            <div class="output-container">
+                <div class="output-header">
+                    <h3>Output</h3>
+                    <button id="clear-output">Clear</button>
+                </div>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+</body>
+</html>
